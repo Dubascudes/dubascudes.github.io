@@ -11,49 +11,23 @@ redirect_from:
 
 Education
 ======
-* B.S. in GitHub, GitHub University, 2012
-* M.S. in Jekyll, GitHub University, 2014
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
+* B.S. in Computer Science, University of Central Florida, 2023
+* Ph.D in Computer Engineering, University of Central Florida,, 2027 (expected)
 
 Work experience
 ======
-* Summer 2015: Research Assistant
-  * Github University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
+* Spring 2020: Research Assistant
+  * University of Central Florida
+  * Duties included: Assessing integrability of various technologies into TeachLivE's Virtual Reality application, including Blockly and FitBit APIs. 
+  * Supervisor: Dr. Charles Hughes
 
-* Fall 2015: Research Assistant
-  * Github University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+* Fall 2023-Present: Graduate Researcher
+  * University of Central Florida
+  * Duties included: Producing and presenting systems and code in accordance with the needs of the group.
+  * Supervisor: Dr. Rickard Ewetz
   
 Skills
 ======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+* Languages: C, C++, Java, Python, Javascript
+* Libaries: Matplotlib, PyTorch, Tensorflow
 
-Publications
-======
-  <ul>{% for post in site.publications %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks %}
-    {% include archive-single-talk-cv.html %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
