@@ -1,6 +1,6 @@
 ---
-title: "Portfolio item number 1"
-excerpt: "Short description of portfolio item number 1<br/><img src='/images/500x300.png'>"
+title: "Multi-Cancer Classification"
+excerpt: "We trained 5 classifiers for 5 types of cancer as a final project for a graduate Computer Vision course.<br/><img src='/images/cervical_confusion_matrix.png'>"
 collection: portfolio
 ---
 
