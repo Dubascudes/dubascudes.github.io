@@ -85,8 +85,8 @@ author:
   bio              : "Graduate Researcher, Artificial Inteligence and Emerging Computing Lab, University of Central Florida"
   location         : "Orlando, Florida"
   employer         :
-  pubmed           : ""
-  googlescholar    : ""
+  pubmed           : 
+  googlescholar    : 
   email            :
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
