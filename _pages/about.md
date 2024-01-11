@@ -1,7 +1,13 @@
+---
+permalink: /
+title: "About Me"
+excerpt: "About me"
+author_profile: true
+redirect_from: 
+  - /about/
+  - /about.html
+---
 
-
-
-About Me
 ======
 Will English is a graduate student in the Department of Electrical and Computer Engineering at the University of Central Florida.
 
