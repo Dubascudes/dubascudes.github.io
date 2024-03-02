@@ -48,7 +48,7 @@ $link-color: #1E90FF; // Links color
 $code-background-color: #282C34; // Background for code blocks
 
 // Apply dark theme styles
-body, nav, footer {
+body, nav, footer, .side-nav {
   background-color: $background-color;
   color: $text-color;
 }
