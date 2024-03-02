@@ -7,7 +7,7 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "William English"
+title                    : "Will Teaches Code"
 title_separator          : "-"
 name                     : &name "Will English"
 description              : &description "Computer Engineering PhD student at UCF"
@@ -80,9 +80,9 @@ analytics:
 
 # Site Author
 author:
-  name             : "Will"
+  name             : "William English"
   avatar           : "profile.png"
-  bio              : "Graduate Researcher, Artificial Inteligence and Emerging Computing Lab, University of Central Florida"
+  bio              : "PhD Student Researcher, Artificial Inteligence and Emerging Computing Lab, University of Central Florida"
   location         : "Orlando, Florida"
   employer         :
   pubmed           : 
