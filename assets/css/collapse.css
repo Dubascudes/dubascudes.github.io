@@ -1,16 +1,24 @@
 .container {
-    width:100%;
-    border:1px solid #d3d3d3;
+    width: 100%;
+    border: 1px solid #404040; /* Darker border color */
 }
+
 .container div {
-    width:100%;
+    width: 100%;
+    color: #e0e0e0; /* Light text color for contrast */
 }
+
 .container .header {
-    background-color:#d3d3d3;
+    background-color: #303030; /* Darker background color */
     padding: 2px;
     cursor: pointer;
     font-weight: bold;
+    color: #ffffff; /* Brighter text color for better visibility */
 }
+
 .container .content {
     display: none;
-    padding : 5px;
+    padding: 5px;
+    background-color: #202020; /* Even darker background for content */
+    color: #cccccc; /* Slightly dim text color for content */
+}
