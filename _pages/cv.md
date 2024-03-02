@@ -29,5 +29,5 @@ Work experience
 Skills
 ======
 * Languages: C, C++, Java, Python, Javascript
-* Libaries: Matplotlib, PyTorch, Tensorflow
+* Libaries and Technology: PyTorch, Tensorflow, Manim, ROS
 
