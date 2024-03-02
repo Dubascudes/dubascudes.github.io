@@ -39,3 +39,26 @@
 @import "vendor/font-awesome/brands";
 @import "vendor/magnific-popup/magnific-popup";
 @import "print";
+
+// Dark Theme Variables
+$background-color: #121212; // Dark background
+$text-color: #E0E0E0; // Light text
+$border-color: #333333; // Darker border for elements
+$link-color: #1E90FF; // Links color
+$code-background-color: #282C34; // Background for code blocks
+
+// Apply dark theme styles
+body {
+  background-color: $background-color;
+  color: $text-color;
+}
+
+a {
+  color: $link-color;
+}
+
+blockquote, pre, code {
+  background-color: $code-background-color;
+}
+
+// Add other element styles as needed
