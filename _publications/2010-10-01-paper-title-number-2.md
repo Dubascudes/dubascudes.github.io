@@ -12,8 +12,5 @@ venue: 'ICAA'
 #paperurl: 'http://academicpages.github.io/files/paper2.pdf'
 citation: 'W. English, D. Simon, M. R. Ahmed, S. K. Jha, and R. Ewetz, “Neuro-Symbolic Program Synthesis for Multi-Hop Natural Language Navigation”, International Conference on Assured Autonomy (ICAA), 2024.'
 ---
-This paper is about the number 2. The number 3 is left for future work.
 
-[Download paper here](http://academicpages.github.io/files/paper2.pdf)
-
-Recommended citation: Your Name, You. (2010). "Paper Title Number 2." <i>Journal 1</i>. 1(2).
+The contents above will be part of a list of publications, if the user clicks the link for the publication than the contents of section will be rendered as a full page, allowing you to provide more information about the paper for the reader. When publications are displayed as a single page, the contents of the above "citation" field will automatically be included below this section in a smaller font.
