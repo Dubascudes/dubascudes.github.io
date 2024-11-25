@@ -10,7 +10,7 @@ locale                   : "en-US"
 title                    : "Will Teaches Code"
 title_separator          : "-"
 name                     : &name "Will English"
-description              : &description "Computer Engineering PhD student at UCF"
+description              : &description "Computer Engineering PhD student at UF"
 url                      : https://willenglish.tech # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "dubascudes/dubascudes.github.io"
@@ -82,9 +82,9 @@ analytics:
 author:
   name             : "William English"
   avatar           : "profile.png"
-  bio              : "PhD Student Researcher, Artificial Inteligence and Emerging Computing Lab, University of Central Florida"
-  location         : "Orlando, Florida"
-  employer         :
+  bio              : "PhD Student Researcher, Artificial Inteligence and Emerging Computing Lab, University of Florida"
+  location         : "Gainesville, Florida"
+  employer         : "University of Florida"
   pubmed           : 
   googlescholar    : 
   email            : "me@willenglish.tech"
@@ -103,7 +103,7 @@ author:
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         :
-  orcid            : 
+  orcid            : "0009-0009-3134-2787"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
