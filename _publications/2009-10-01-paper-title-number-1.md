@@ -1,15 +1,16 @@
 ---
-title: "Paper Title Number 1"
+title: "NSP: A Neuro-Symbolic Natural Language Navigational Planner"
 collection: publications
-permalink: /publication/2009-10-01-paper-title-number-1
-excerpt: 'This paper is about the number 1. The number 2 is left for future work.'
-date: 2009-10-01
-venue: 'Journal 1'
-paperurl: 'http://academicpages.github.io/files/paper1.pdf'
-citation: 'Your Name, You. (2009). &quot;Paper Title Number 1.&quot; <i>Journal 1</i>. 1(1).'
+permalink: https://arxiv.org/abs/2409.06859
+excerpt: 'NSP uses a feedback loop from the symbolic execution environment to the neural generation process to self-correct syntax errors and satisfy execution time constraints. We evaluate our neuro-symbolic approach using a benchmark suite with 1500 path-planning problems. The experimental evaluation shows that our neuro-symbolic approach produces 90.1% valid paths that are on average 19-77% shorter than state-of-the-art neural approaches.
+'
+date: 2024-12-18
+venue: 'ICMLA'
+#paperurl: 'https://arxiv.org/abs/2409.06859'
+citation: 'William English, Dominic Simon, Sumit Jha, and Rickard Ewetz, “NSP: A Neuro-Symbolic Natural Language Navigational Planner”, International Conference on Machine Learning and Applications (ICMLA), 2024.'
 ---
-This paper is about the number 1. The number 2 is left for future work.
+NSP uses a feedback loop from the symbolic execution environment to the neural generation process to self-correct syntax errors and satisfy execution time constraints. We evaluate our neuro-symbolic approach using a benchmark suite with 1500 path-planning problems. The experimental evaluation shows that our neuro-symbolic approach produces 90.1% valid paths that are on average 19-77% shorter than state-of-the-art neural approaches.
 
 [Download paper here](http://academicpages.github.io/files/paper1.pdf)
 
-Recommended citation: Your Name, You. (2009). "Paper Title Number 1." <i>Journal 1</i>. 1(1).
+Recommended citation: [ICMLA’24] William English, Dominic Simon, Sumit Jha, and Rickard Ewetz, “NSP: A Neuro-Symbolic Natural Language Navigational Planner”, International Conference on Machine Learning and Applications (ICMLA), 2024.
