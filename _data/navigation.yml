@@ -8,7 +8,10 @@ main:
 
   - title: "Publications"
     url: /publications/
-    
+
+  - title: "Tools"
+    url: /tools/
+
   - title: "Blog Posts"
     url: /year-archive/
     
