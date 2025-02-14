@@ -46,7 +46,7 @@ $text-color: #E0E0E0; // Light text
 $border-color: #333333; // Darker border for elements
 // $link-color: #1E90FF; // Links color
 $link-color: #fa4616; // Links color
-$code-background-color: #282C34; // Background for code blocks
+$code-background-color: #121212; // Background for code blocks
 
 // Apply dark theme styles
 html, body, nav, footer, .greedy-nav, .page__footer {
@@ -69,9 +69,27 @@ div.highlighter-rouge,figure.highlight {
   padding: 1em;
   border: 1px solid #f2f3f3;
   border-radius: 4px;
-  background-color: #282C34;
+  background-color: #121212;
   box-shadow: 0 1px 1px rgba(0,0,0,0.125);
   font-size: 1.25em
 }
+// .highlight{
+//   background: #121212;
+//   background-color: #121212;
+//   border: 0px solid #f2f3f3;
 
+// }
+// code {
+//   background: #121212;
+//   background-color: #121212;
+//   border: 0px solid #f2f3f3;
+
+// }
+ img {
+  width: 50%;
+  position: relative;
+  top: 50%;
+  left: 33%;
+  // transform: translate(-50%, -50%);
+}
 // Add other element styles as needed
