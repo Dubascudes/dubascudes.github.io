@@ -89,7 +89,7 @@ author:
   location         : "Gainesville, Florida"
   employer         : "University of Florida"
   pubmed           : 
-  googlescholar    : 
+  googlescholar    : "https://scholar.google.com/citations?user=Tv7zmMEAAAAJ&hl=en"
   email            : "me@willenglish.tech"
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
@@ -106,7 +106,7 @@ author:
   impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
   lastfm           :
   linkedin         :
-  orcid            : "0009-0009-3134-2787"
+  orcid            : "https://orcid.org/0009-0009-3134-2787"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
