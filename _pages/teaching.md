@@ -8,7 +8,6 @@ nav_order: 6
 calendar: true
 ---
 
-
 <p>I have 11 years of experience in programming. I began in middle school learning C and C++ for robotics projects, and continued this education into high school with more advanced robotics projects involving some Java. During this time, I taught many peers how to code in these languages. In my undergraduate degree, I excelled in my programming courses and improved my understanding of computer theory and discrete mathematics. I am now working towards my PhD in Computer Engineering. You can explore some of my more recent work on my <a href="https://github.com/dubascudes" target="_blank">GitHub</a> and this website.</p>
 
 <p>The courses I traditionally offer include:</p>
