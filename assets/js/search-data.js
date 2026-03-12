@@ -44,9 +44,9 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-do-not-use-wix",
+        },{id: "post-github-pages-gt-gt-wix",
         
-          title: "Do not use Wix",
+          title: "GitHub Pages &gt;&gt; Wix",
         
         description: "",
         section: "Posts",
