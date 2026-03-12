@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-something-about-3n-1",
+        },{id: "post-do-not-use-wix",
+        
+          title: "Do not use Wix",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/posts/2026/03/post/";
+          
+        },
+      },{id: "post-something-about-3n-1",
         
           title: "Something about 3n + 1",
         
