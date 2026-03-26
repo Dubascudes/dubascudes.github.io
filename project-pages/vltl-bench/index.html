@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="VLTL-Bench: Verifiable Natural Language to Linear Temporal Logic Translation">
+  <meta name="description" content="VLTL-Bench is a comprehensive benchmark for evaluating NL-to-LTL translation systems, measuring lifting, translation, grounding, and verification across four diverse state spaces with thousands of specifications.">
+  <meta name="keywords" content="temporal logic, LTL, natural language processing, formal verification, benchmark, NL-to-LTL, grounding, linear temporal logic, specification mining">
+  <meta name="author" content="William English, Chase Walker, Dominic Simon, Sumit Jha, Rickard Ewetz">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="University of Florida">
+  <meta property="og:title" content="VLTL-Bench: Verifiable Natural Language to Linear Temporal Logic Translation">
+  <meta property="og:description" content="A comprehensive benchmark for evaluating NL-to-LTL translation systems with ground truth annotations for lifting, translation, grounding, and verification.">
+  <meta property="og:url" content="https://YOUR_DOMAIN.com/vltl-bench">
+  <meta property="og:image" content="https://YOUR_DOMAIN.com/static/images/nl-to-tl-translation.svg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="VLTL-Bench: NL to LTL Translation Pipeline">
+  <meta property="article:published_time" content="2025-07-01T00:00:00.000Z">
+  <meta property="article:author" content="William English">
+  <meta property="article:section" content="Research">
+  <meta property="article:tag" content="temporal logic">
+  <meta property="article:tag" content="formal verification">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="VLTL-Bench: Verifiable Natural Language to Linear Temporal Logic Translation">
+  <meta name="twitter:description" content="A comprehensive benchmark for evaluating NL-to-LTL translation systems with ground truth annotations for lifting, translation, grounding, and verification.">
+  <meta name="twitter:image" content="https://YOUR_DOMAIN.com/static/images/nl-to-tl-translation.svg">
+  <meta name="twitter:image:alt" content="VLTL-Bench: NL to LTL Translation Pipeline">
+
+  <!-- Academic/Research Specific -->
+  <meta name="citation_title" content="Verifiable Natural Language to Linear Temporal Logic Translation: A Benchmark Dataset and Evaluation Suite">
+  <meta name="citation_author" content="English, William">
+  <meta name="citation_author" content="Walker, Chase">
+  <meta name="citation_author" content="Simon, Dominic">
+  <meta name="citation_author" content="Jha, Sumit">
+  <meta name="citation_author" content="Ewetz, Rickard">
+  <meta name="citation_publication_date" content="2025">
+  <meta name="citation_arxiv_id" content="2507.00877">
+
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <title>VLTL-Bench: Verifiable NL-to-LTL Translation Benchmark - English, Walker, Simon, Jha, Ewetz</title>
+
+  <!-- Favicon and App Icons -->
+  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="apple-touch-icon" href="static/images/favicon.ico">
+
+  <!-- Critical CSS - Load synchronously -->
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <!-- Non-critical CSS - Load asynchronously -->
+  <link rel="preload" href="static/css/fontawesome.all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+
+  <!-- Fallback for browsers that don't support preload -->
+  <noscript>
+    <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  </noscript>
+
+  <!-- Fonts - Optimized loading -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Defer non-critical JavaScript -->
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script defer src="static/js/index.js"></script>
+
+  <!-- Structured Data for Academic Papers -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ScholarlyArticle",
+    "headline": "Verifiable Natural Language to Linear Temporal Logic Translation: A Benchmark Dataset and Evaluation Suite",
+    "description": "VLTL-Bench is a comprehensive benchmark for evaluating NL-to-LTL translation systems, measuring lifting, translation, grounding, and verification across four diverse state spaces.",
+    "author": [
+      {
+        "@type": "Person",
+        "name": "William English",
+        "affiliation": { "@type": "Organization", "name": "University of Florida" }
+      },
+      {
+        "@type": "Person",
+        "name": "Chase Walker",
+        "affiliation": { "@type": "Organization", "name": "University of Florida" }
+      },
+      {
+        "@type": "Person",
+        "name": "Dominic Simon",
+        "affiliation": { "@type": "Organization", "name": "University of Florida" }
+      },
+      {
+        "@type": "Person",
+        "name": "Sumit Jha",
+        "affiliation": { "@type": "Organization", "name": "Florida International University" }
+      },
+      {
+        "@type": "Person",
+        "name": "Rickard Ewetz",
+        "affiliation": { "@type": "Organization", "name": "University of Florida" }
+      }
+    ],
+    "datePublished": "2025",
+    "keywords": ["temporal logic", "LTL", "natural language processing", "formal verification", "benchmark", "grounding"],
+    "abstract": "Current benchmarks for natural language to temporal logic translation report near-perfect accuracy on logic translation alone but neglect grounding atomic propositions to new environments. We introduce VLTL-Bench, a comprehensive benchmark measuring both verification and verifiability of automated translation systems across four unique state spaces with thousands of diverse specifications.",
+    "isAccessibleForFree": true,
+    "about": [
+      { "@type": "Thing", "name": "Linear Temporal Logic" },
+      { "@type": "Thing", "name": "Formal Verification" },
+      { "@type": "Thing", "name": "Natural Language Processing" }
+    ]
+  }
+  </script>
+
+  <!-- Inline styles for tables and additional components -->
+  <style>
+    /* Data tables */
+    .data-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.95rem;
+      margin: 1.5rem 0;
+      background: var(--background-primary);
+      border-radius: var(--border-radius);
+      overflow: hidden;
+      box-shadow: var(--shadow-md);
+    }
+    .data-table thead {
+      background: var(--text-primary);
+      color: #fff;
+    }
+    .data-table th {
+      padding: 0.85rem 1rem;
+      font-weight: 600;
+      text-align: center;
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .data-table td {
+      padding: 0.75rem 1rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .data-table tbody tr:hover {
+      background: var(--background-accent);
+    }
+    .data-table tbody tr:last-child td {
+      border-bottom: none;
+    }
+    .data-table .highlight {
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+    .data-table .scenario-name {
+      text-align: left;
+      font-weight: 600;
+    }
+
+    /* Comparison check/cross marks */
+    .check { color: #10b981; font-weight: 700; }
+    .cross { color: #ef4444; font-weight: 700; }
+
+    /* Key contributions cards */
+    .contribution-cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+    .contribution-card {
+      background: var(--background-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius-lg);
+      padding: 1.75rem;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .contribution-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-lg);
+    }
+    .contribution-card .card-icon {
+      font-size: 1.5rem;
+      margin-bottom: 0.75rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: var(--background-accent);
+      color: var(--primary-color);
+    }
+    .contribution-card h4 {
+      font-size: 1.05rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: var(--text-primary);
+    }
+    .contribution-card p {
+      font-size: 0.95rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Pipeline step indicators */
+    .pipeline-steps {
+      display: flex;
+      justify-content: center;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+    }
+    .pipeline-step {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.2rem;
+      border-radius: 9999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      background: var(--background-accent);
+      color: var(--text-primary);
+      border: 1px solid var(--border-color);
+    }
+    .pipeline-step .step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--primary-color);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+    }
+    .pipeline-arrow {
+      display: inline-flex;
+      align-items: center;
+      color: var(--text-light);
+      font-size: 1rem;
+    }
+
+    /* Scenario stat cards */
+    .scenario-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .scenario-card {
+      background: var(--background-primary);
+      border: 1px solid var(--border-color);
+      border-radius: var(--border-radius);
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+    .scenario-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+    }
+    .scenario-card .scenario-icon {
+      font-size: 1.75rem;
+      margin-bottom: 0.5rem;
+    }
+    .scenario-card h4 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+      color: var(--text-primary);
+    }
+    .scenario-card .scenario-size {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary-color);
+      margin-bottom: 0.3rem;
+    }
+    .scenario-card .scenario-detail {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      line-height: 1.4;
+    }
+
+    /* Stat highlight row */
+    .stat-row {
+      display: flex;
+      justify-content: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+      margin: 2rem 0;
+    }
+    .stat-item {
+      text-align: center;
+    }
+    .stat-item .stat-number {
+      font-size: 2.5rem;
+      font-weight: 800;
+      color: var(--primary-color);
+      line-height: 1;
+    }
+    .stat-item .stat-label {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      font-weight: 500;
+      margin-top: 0.25rem;
+    }
+
+    /* Table wrapper for mobile scroll */
+    .table-wrapper {
+      overflow-x: auto;
+      border-radius: var(--border-radius);
+    }
+
+    @media (max-width: 768px) {
+      .contribution-cards {
+        grid-template-columns: 1fr;
+      }
+      .pipeline-steps {
+        flex-direction: column;
+        align-items: center;
+      }
+      .pipeline-arrow {
+        transform: rotate(90deg);
+      }
+      .stat-row {
+        gap: 1.5rem;
+      }
+      .stat-item .stat-number {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Scroll to Top Button -->
+  <button class="scroll-to-top" onclick="scrollToTop()" title="Scroll to top" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <!-- Related Works Dropdown -->
+  <div class="more-works-container">
+    <button class="more-works-btn" onclick="toggleMoreWorks()" title="View Related Works">
+      <i class="fas fa-flask"></i>
+      Related Works
+      <i class="fas fa-chevron-down dropdown-arrow"></i>
+    </button>
+    <div class="more-works-dropdown" id="moreWorksDropdown">
+      <div class="dropdown-header">
+        <h4>Related Works</h4>
+        <button class="close-btn" onclick="toggleMoreWorks()">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="works-list">
+        <a href="https://arxiv.org/abs/2305.07766" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Lang2LTL: Translating Natural Language Commands to Temporal Robot Task Specification</h5>
+            <p>Modular NL-to-LTL translation system using LLMs for lifting and grounding subtasks.</p>
+            <span class="work-venue">ICRA 2024</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://arxiv.org/abs/2310.06391" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>NL2TL: Transforming Natural Languages to Temporal Logics using LLMs</h5>
+            <p>LLM-based translation from natural language to signal temporal logic and LTL.</p>
+            <span class="work-venue">EMNLP 2023</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+        <a href="https://arxiv.org/abs/2411.01539" class="work-item" target="_blank">
+          <div class="work-info">
+            <h5>Conformal Temporal Logic Planning using LLMs</h5>
+            <p>Conformal prediction for reliable NL-to-LTL translation with statistical guarantees.</p>
+            <span class="work-venue">arXiv 2024</span>
+          </div>
+          <i class="fas fa-external-link-alt"></i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main-content">
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Verifiable Natural Language to Linear Temporal Logic Translation: A Benchmark Dataset and Evaluation Suite</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://willenglish.tech/" target="_blank">William English</a><sup>1</sup>,</span>
+              <span class="author-block">
+                Chase Walker<sup>1</sup>,</span>
+              <span class="author-block">
+                Dominic Simon<sup>1</sup>,</span>
+              <span class="author-block">
+                <a href="https://users.cs.fiu.edu/~jha/" target="_blank">Sumit Jha</a><sup>2</sup>,</span>
+              <span class="author-block">
+                <a href="https://faculty.eng.ufl.edu/ewetz/" target="_blank">Rickard Ewetz</a><sup>1</sup>
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>University of Florida &nbsp; <sup>2</sup>Florida International University</span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- arXiv -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/2507.00877" class="external-link button is-normal is-rounded is-dark" target="_blank">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <!-- Paper PDF -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/pdf/2507.00877" class="external-link button is-normal is-rounded is-dark" target="_blank">
+                    <span class="icon">
+                      <i class="fas fa-file-pdf"></i>
+                    </span>
+                    <span>Paper</span>
+                  </a>
+                </span>
+
+                <!-- Dataset -->
+                <span class="link-block">
+                  <a class="external-link button is-normal is-rounded is-dark is-disabled-style">
+                    <span class="icon">
+                      <i class="fas fa-database"></i>
+                    </span>
+                    <span>Dataset</span>
+                    <span class="coming-soon-badge">Coming Soon</span>
+                  </a>
+                </span>
+
+                <!-- Code -->
+                <span class="link-block">
+                  <a class="external-link button is-normal is-rounded is-dark is-disabled-style">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                    <span class="coming-soon-badge">Coming Soon</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+<!-- Main Figure -->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/nl-to-tl-translation.svg" alt="Overview of the NL-to-LTL translation pipeline showing lifting, grounding, translation, and verification stages" style="width:100%; border-radius: 8px;">
+      <h2 class="subtitle has-text-centered" style="margin-top: 1rem;">
+        The NL-to-LTL translation pipeline evaluated by VLTL-Bench. Our benchmark provides ground truth annotations at each stage&mdash;lifting, grounding, translation, and verification&mdash;enabling isolated evaluation of every pipeline component.
+      </h2>
+    </div>
+  </div>
+</section>
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Current benchmarks for natural language (NL) to temporal logic (TL) translation report near-perfect accuracy on logic translation alone but neglect grounding atomic propositions to new environments&mdash;a step essential for actual verification. We introduce <strong>VLTL-Bench</strong>, a comprehensive benchmark measuring both the <em>verification</em> and <em>verifiability</em> of automated translation systems.
+          </p>
+          <p>
+            VLTL-Bench provides a dataset consisting of four unique state spaces and thousands of diverse natural language specifications with corresponding formal temporal logic expressions. Crucially, the benchmark includes intermediate evaluation points with ground truths for lifting, grounding, translation, and verification substeps, as well as sample traces for validating temporal logic expressions.
+          </p>
+          <p>
+            Our empirical evaluation reveals that state-of-the-art frameworks that achieve near-perfect lifted translation accuracy suffer dramatic performance drops when grounding is required, exposing a critical gap between reported benchmark results and real-world deployment capabilities. These findings demonstrate that comprehensive evaluation requires domain-general systems capable of handling extensible grounding scenarios, not just translating logical structure.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Key Contributions -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Key Contributions</h2>
+      <div class="contribution-cards">
+        <div class="contribution-card">
+          <div class="card-icon">
+            <i class="fas fa-layer-group"></i>
+          </div>
+          <h4>Unified Benchmark</h4>
+          <p>First benchmark supporting evaluation of all NL-to-TL pipeline components with ground truth annotations at every stage: lifting, grounding, translation, and verification.</p>
+        </div>
+        <div class="contribution-card">
+          <div class="card-icon">
+            <i class="fas fa-check-double"></i>
+          </div>
+          <h4>Verification Evaluation</h4>
+          <p>Novel verification evaluation methodology using satisfying and violating execution traces, enabling assessment of whether translated formulas are actually usable for runtime verification.</p>
+        </div>
+        <div class="contribution-card">
+          <div class="card-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <h4>Exposing Failure Modes</h4>
+          <p>Empirical study revealing critical failure modes in current methods&mdash;particularly in grounding tasks&mdash;where reported near-perfect accuracy drops dramatically in end-to-end evaluation.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Pipeline Overview -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Evaluation Pipeline</h2>
+      <p class="has-text-centered" style="color: var(--text-secondary); margin-bottom: 1rem; font-size: 1.05rem;">
+        VLTL-Bench evaluates four complementary stages of the NL-to-LTL translation pipeline.
+      </p>
+      <div class="pipeline-steps">
+        <div class="pipeline-step">
+          <span class="step-num">1</span>
+          Lifting
+        </div>
+        <span class="pipeline-arrow"><i class="fas fa-arrow-right"></i></span>
+        <div class="pipeline-step">
+          <span class="step-num">2</span>
+          Translation
+        </div>
+        <span class="pipeline-arrow"><i class="fas fa-arrow-right"></i></span>
+        <div class="pipeline-step">
+          <span class="step-num">3</span>
+          Grounding
+        </div>
+        <span class="pipeline-arrow"><i class="fas fa-arrow-right"></i></span>
+        <div class="pipeline-step">
+          <span class="step-num">4</span>
+          Verification
+        </div>
+      </div>
+
+      <div class="table-wrapper" style="margin-top: 2rem;">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Dataset</th>
+              <th>Lifting</th>
+              <th>Translation</th>
+              <th>Grounding</th>
+              <th>Verification</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="scenario-name">Cleanup World</td>
+              <td><span class="check"><i class="fas fa-check"></i></span></td>
+              <td><span class="check"><i class="fas fa-check"></i></span></td>
+              <td><span class="cross"><i class="fas fa-times"></i></span></td>
+              <td><span class="cross"><i class="fas fa-times"></i></span></td>
+            </tr>
+            <tr>
+              <td class="scenario-name">GLTL</td>
+              <td><span class="check"><i class="fas fa-check"></i></span></td>
+              <td><span class="check"><i class="fas fa-check"></i></span></td>
+              <td><span class="cross"><i class="fas fa-times"></i></span></td>
+              <td><span class="cross"><i class="fas fa-times"></i></span></td>
+            </tr>
+            <tr>
+              <td class="scenario-name">Navi</td>
+              <td><span class="cross"><i class="fas fa-times"></i></span></td>
+              <td><span class="check"><i class="fas fa-check"></i></span></td>
+              <td><span class="check"><i class="fas fa-check"></i></span></td>
+              <td><span class="cross"><i class="fas fa-times"></i></span></td>
+            </tr>
+            <tr>
+              <td class="scenario-name">Conformal</td>
+              <td><span class="check"><i class="fas fa-check"></i></span></td>
+              <td><span class="check"><i class="fas fa-check"></i></span></td>
+              <td><span class="check"><i class="fas fa-check"></i></span></td>
+              <td><span class="cross"><i class="fas fa-times"></i></span></td>
+            </tr>
+            <tr style="background: #eff6ff;">
+              <td class="scenario-name"><strong>VLTL-Bench (Ours)</strong></td>
+              <td><span class="check"><i class="fas fa-check"></i></span></td>
+              <td><span class="check"><i class="fas fa-check"></i></span></td>
+              <td><span class="check"><i class="fas fa-check"></i></span></td>
+              <td><span class="check"><i class="fas fa-check"></i></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Dataset Overview -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Dataset Overview</h2>
+
+      <div class="stat-row">
+        <div class="stat-item">
+          <div class="stat-number">32K+</div>
+          <div class="stat-label">Specifications</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">4</div>
+          <div class="stat-label">State Spaces</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">25K</div>
+          <div class="stat-label">Unique LTL Formulas</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">4</div>
+          <div class="stat-label">Evaluation Stages</div>
+        </div>
+      </div>
+
+      <!-- Data Synthesis Figure -->
+      <div style="margin: 2rem 0;">
+        <img src="static/images/DataSynthesisFigure.svg" alt="VLTL-Bench data synthesis pipeline showing template-based generation across four scenarios" style="width:100%; border-radius: 8px;">
+        <p class="has-text-centered" style="margin-top: 0.75rem; color: var(--text-secondary); font-size: 0.95rem;">
+          Data synthesis pipeline: expert-crafted templates are instantiated with scenario-specific atomic propositions to generate diverse NL-LTL pairs with full annotation.
+        </p>
+      </div>
+
+      <div class="scenario-grid">
+        <div class="scenario-card">
+          <div class="scenario-icon">&#x1F373;</div>
+          <h4>Kitchen Assistant</h4>
+          <div class="scenario-size">10,000</div>
+          <div class="scenario-detail">376 unique words &middot; 7,385 unique LTL<br>Ambiguous action/argument references</div>
+        </div>
+        <div class="scenario-card">
+          <div class="scenario-icon">&#x1F6A6;</div>
+          <h4>Traffic Light</h4>
+          <div class="scenario-size">7,319</div>
+          <div class="scenario-detail">217 unique words &middot; 6,196 unique LTL<br>Large argument library, few actions</div>
+        </div>
+        <div class="scenario-card">
+          <div class="scenario-icon">&#x1F6E9;</div>
+          <h4>Search &amp; Rescue</h4>
+          <div class="scenario-size">7,304</div>
+          <div class="scenario-detail">245 unique words &middot; 5,425 unique LTL<br>Multi-step temporal dependencies</div>
+        </div>
+        <div class="scenario-card">
+          <div class="scenario-icon">&#x1F4E6;</div>
+          <h4>Warehouse</h4>
+          <div class="scenario-size">7,457</div>
+          <div class="scenario-detail">1,028 unique words &middot; 5,991 unique LTL<br>High semantic variability (80 COCO objects)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Benchmark Comparison Table -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Benchmark Results</h2>
+      <img src="static/images/benchmark_comparison_table.png" alt="Comprehensive benchmark comparison results across all evaluation stages" style="width:100%; border-radius: 8px;">
+      <p class="has-text-centered" style="margin-top: 0.75rem; color: var(--text-secondary); font-size: 0.95rem;">
+        Comprehensive results across all evaluation stages. Systems achieving near-perfect lifted translation accuracy exhibit dramatic performance drops on grounded end-to-end evaluation.
+      </p>
+    </div>
+  </div>
+</section>
+
+
+<!-- Key Findings -->
+<section class="hero is-small">
+  <div class="hero-body">
+    <div class="container is-max-desktop">
+      <h2 class="title is-3 has-text-centered">Key Findings</h2>
+
+      <div class="table-wrapper">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Finding</th>
+              <th>Details</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="scenario-name" style="white-space: nowrap;">Lifted translation is &ldquo;solved&rdquo;</td>
+              <td style="text-align: left;">NL2TL achieves 99.9&ndash;100% accuracy on lifted translation when given ground-truth atomic propositions, masking critical downstream failures.</td>
+            </tr>
+            <tr>
+              <td class="scenario-name" style="white-space: nowrap;">Grounding is the bottleneck</td>
+              <td style="text-align: left;">Few-shot grounding accuracy ranges from only 56.9&ndash;82.3% per atomic proposition, even with scenario-informed prompting. This is the primary failure mode.</td>
+            </tr>
+            <tr>
+              <td class="scenario-name" style="white-space: nowrap;">End-to-end collapse</td>
+              <td style="text-align: left;">NL2TL drops to 54.4&ndash;60.1% and Lang2LTL to 37.9&ndash;72.1% on end-to-end grounded translation, far below real-world requirements.</td>
+            </tr>
+            <tr>
+              <td class="scenario-name" style="white-space: nowrap;">Verification gap</td>
+              <td style="text-align: left;">Systems that perform well on lifted translation see 20&ndash;30 percentage point declines in verification accuracy when using grounded formulas.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- BibTeX Citation -->
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <div class="bibtex-header">
+      <h2 class="title">BibTeX</h2>
+      <button class="copy-bibtex-btn" onclick="copyBibTeX()" title="Copy BibTeX to clipboard">
+        <i class="fas fa-copy"></i>
+        <span class="copy-text">Copy</span>
+      </button>
+    </div>
+    <pre id="bibtex-code"><code>@article{english2025vltlbench,
+  title={Verifiable Natural Language to Linear Temporal Logic Translation: A Benchmark Dataset and Evaluation Suite},
+  author={English, William and Walker, Chase and Simon, Dominic and Jha, Sumit and Ewetz, Rickard},
+  journal={arXiv preprint arXiv:2507.00877},
+  year={2025}
+}</code></pre>
+  </div>
+</section>
+
+
+  <footer class="footer">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content has-text-centered">
+            <p>
+              This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
+              Licensed under <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">CC BY-SA 4.0</a>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  </main>
+
+</body>
+</html>
