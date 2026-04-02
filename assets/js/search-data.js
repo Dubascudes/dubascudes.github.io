@@ -120,6 +120,11 @@ ninja.data = [{
           description: "A benchmark dataset and evaluation suite for verifiable natural language to linear temporal logic translation.",
           section: "Projects",handler: () => {
               window.location.href = "/projects/nl2ltl-benchmark/";
+            },},{id: "projects-person-following-robot",
+          title: 'Person Following Robot',
+          description: "A robot that autonomously follows a person using computer vision and control.",
+          section: "Projects",handler: () => {
+              window.location.href = "/projects/person-following-robot/";
             },},{id: "projects-safety-guided-flow-matching",
           title: 'Safety-Guided Flow Matching',
           description: "Neuro-symbolic safety guidance for vision-language-action models via constrained flow matching.",
