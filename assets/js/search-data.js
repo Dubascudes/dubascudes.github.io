@@ -30,6 +30,20 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/projects/";
           },
+        },{id: "nav-repositories",
+          title: "repositories",
+          description: "",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/repositories/";
+          },
+        },{id: "nav-chess",
+          title: "chess",
+          description: "my chess.com rapid rating since May 2025 (@deepcroaker)",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/chess/";
+          },
         },{id: "nav-cv",
           title: "CV",
           description: "",
@@ -44,7 +58,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
-        },{id: "post-github-pages-gt-gt-wix",
+        },{id: "post-turboquant-redefining-ai-efficiency-with-extreme-compression",
+        
+          title: "TurboQuant: Redefining AI Efficiency with Extreme Compression",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/posts/2026/04/turboquant/";
+          
+        },
+      },{id: "post-github-pages-gt-gt-wix",
         
           title: "GitHub Pages &gt;&gt; Wix",
         
