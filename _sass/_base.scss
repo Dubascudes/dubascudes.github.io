@@ -1530,3 +1530,28 @@ figure.cover {
 mjx-container[jax="CHTML"][display="true"] {
   overflow-x: auto;
 }
+
+// Gallery
+
+.gallery {
+  .col:hover {
+    position: relative;
+    z-index: 10;
+  }
+
+  .card-img-top {
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: var(--crop-focus, 50% 30%);
+    transition:
+      transform 0.25s ease,
+      filter 0.25s ease;
+  }
+
+  a:hover .card-img-top {
+    object-fit: contain;
+    object-position: center;
+    transform: scale(1.5);
+    filter: drop-shadow(0 0.5rem 1.5rem rgba(0, 0, 0, 0.45));
+  }
+}

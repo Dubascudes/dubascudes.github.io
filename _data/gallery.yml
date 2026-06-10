@@ -1,0 +1,61 @@
+# Gallery images
+# Each entry needs:
+#   - image: filename in assets/img/gallery/
+#   - date: date the photo was taken (YYYY-MM-DD)
+#   - description: short caption
+# Optional:
+#   - position: CSS object-position for the thumbnail crop (default "50% 30%");
+#     e.g. "50% 80%" focuses near the bottom of the image
+
+- image: 20210519_143105.jpg
+  date: 2021-05-19
+  description: Officially entered remission, thank you Dr. Bansal and Nemous Pediatric Oncology!
+
+- image: IMG_2768.JPG
+  date: 2016-05-31 # TODO: real date unknown (no EXIF) — selfie at the Mauna Kea observatories
+  description: At the summit of Mauna Kea, with the Gemini and CFHT observatories behind me.
+
+- image: IMG_20240110_142919_660.jpg
+  date: 2024-12-18
+  description: Snowshoe Mountain.
+
+- image: 20240512_171450.jpg
+  date: 2024-05-12
+  description: On the 16th of October, 1843, [Sir William Rowan Hamilton](https://en.wikipedia.org/wiki/William_Rowan_Hamilton) etched the fundamental equation of quaternions into Broom Bridge. $i^2 = j^2 = k^2 = ijk = -1$!
+
+- image: 20240813_202247.jpg
+  date: 2024-08-13
+  description: With my lovely fiancé, Brianna, celebrating the end of her chemotherapy.
+
+- image: 20241010_160753.jpg
+  date: 2024-10-10
+  description: My first conference presentation at ICAA 2024 at Vanderbilt University.
+
+- image: 20250717_161752.jpg
+  date: 2025-07-17
+  description: Presenting our paper, "Grammar-Forced Translation of Natural Language to Temporal Logic using LLMs," at ICML 2025 in Vancouver.
+
+- image: 20251219_130401.jpg
+  date: 2025-12-19
+  description: Backpacking the prairie loop trail.
+
+- image: 20251220_162349.jpg
+  date: 2025-12-20
+  description: My kitty, Keats.
+
+- image: Snapchat-453930937.jpg
+  date: 2025-12-21 # TODO: real date unknown (no EXIF) — black cat in arm
+  description: More of Keats.
+
+- image: 20260321_151619.jpg
+  date: 2026-03-21
+  description: On our way to the primitive camp at Payne's Prairie, Gainesville.
+
+- image: 20260322_172601.jpg
+  date: 2026-03-22
+  description: Ramen with Brianna.
+
+- image: Screenshot_20260607_000315_Photos.jpg
+  date: 2026-06-07 # TODO: screenshot date — replace with the actual date of the moment
+  description: She said yes.
+  position: 50% 80%
