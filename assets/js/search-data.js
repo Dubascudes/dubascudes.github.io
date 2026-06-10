@@ -58,6 +58,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/teaching/";
           },
+        },{id: "nav-gallery",
+          title: "gallery",
+          description: "A collection of photos.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/gallery/";
+          },
         },{id: "post-turboquant-redefining-ai-efficiency-with-extreme-compression",
         
           title: "TurboQuant: Redefining AI Efficiency with Extreme Compression",
